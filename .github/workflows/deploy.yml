@@ -1,38 +1,43 @@
-name: Deploy November Helper
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [ main ]
+  workflow_dispatch:
 
-# Добавьте permissions на уровне workflow или job
 permissions:
-  contents: write
+  contents: read
   pages: write
-  id-token: write # <- Это критически важно!
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+        
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --force
-
-      - name: Build the project (Vite)
-        run: npm run build
-
-      - name: Upload production-ready build files
+          
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-
+          # 👇 Оставьте дефолтное имя, но очистите старые артефакты
+          retention-days: 1  # Автоудаление через 1 день
+          
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
