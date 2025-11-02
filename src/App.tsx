@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Checkbox from './components/Checkbox';
 import './index.css';
 import clsx from 'clsx';
-import djeday from './assets/djeday.png';
-import sith from './assets/sith.png';
+import djeday from './assets/djeday.jpg';
+import sith from './assets/sith.jpg';
 
 const App: React.FC = () => {
   // Load initial state from localStorage
