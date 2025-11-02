@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const savedHasGivenUp = localStorage.getItem('novemberChallengeHasGivenUp');
   const savedAnimationPlayed = localStorage.getItem('novemberChallengeAnimationPlayed');
 
-  const [days, setDays] = useState(savedDays ? JSON.parse(savedDays) : Array(31).fill(false));
+  const [days, setDays] = useState(savedDays ? JSON.parse(savedDays) : Array(30).fill(false));
   const [isJedi, setIsJedi] = useState(savedIsJedi ? JSON.parse(savedIsJedi) : true);
   const [lastChecked, setLastChecked] = useState(savedLastChecked ? JSON.parse(savedLastChecked) : -1);
   const [hasGivenUp, setHasGivenUp] = useState(savedHasGivenUp ? JSON.parse(savedHasGivenUp) : false);
