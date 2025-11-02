@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Checkbox from './components/Checkbox';
 import './index.css';
 import clsx from 'clsx';
+import djeday from './assets/djeday.png';
+import sith from './assets/sith.png';
 
 const App: React.FC = () => {
   // Load initial state from localStorage
@@ -125,7 +127,7 @@ const App: React.FC = () => {
     <div className={`min-h-screen ${isJedi ? 'bg-gray-900' : 'bg-red-900'} flex flex-col items-center justify-center p-4 main-container`}>
       <div className="absolute inset-0 w-full h-full z-10">
         <img
-          src={isJedi ? '/djeday.jpg' : '/sith.jpg'}
+          src={isJedi ? djeday : sith}
           alt={isJedi ? 'Jedi' : 'Sith'}
           className="w-full h-full object-cover opacity-70"
         />
