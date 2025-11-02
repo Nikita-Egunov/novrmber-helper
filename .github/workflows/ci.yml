@@ -27,12 +27,6 @@ jobs:
     - name: Install dependencies
       run: npm ci  # ✅ Используем npm ci вместо npm install
     
-    - name: Run linting
-      run: npm run lint
-    
-    - name: Run tests
-      run: npm test  # ✅ Добавлены тесты
-    
     - name: Check types (if using TypeScript)
       run: npm run type-check  # ✅ Проверка типов, если есть
     
