@@ -1,4 +1,4 @@
-name: Deploy Weather App
+name: Deploy November Helper
 
 on:
   push:
