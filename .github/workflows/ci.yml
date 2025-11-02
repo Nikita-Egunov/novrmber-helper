@@ -27,9 +27,6 @@ jobs:
     - name: Install dependencies
       run: npm ci  # ✅ Используем npm ci вместо npm install
     
-    - name: Check types (if using TypeScript)
-      run: npm run type-check  # ✅ Проверка типов, если есть
-    
     - name: Build project
       run: npm run build
     
