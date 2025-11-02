@@ -43,10 +43,12 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
+
   50% {
     transform: translateY(-20px);
     opacity: 1;
   }
+
   100% {
     transform: translateY(100px);
     opacity: 0;
@@ -61,6 +63,7 @@ body {
   0% {
     background-color: rgba(255, 0, 0, 0.8);
   }
+
   100% {
     background-color: transparent;
   }
@@ -81,13 +84,13 @@ body {
 }
 
 .jedi-bg {
-  background-image: url('/path-to-jedi-image.jpg');
+  background-image: url('/djeday.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .sith-bg {
-  background-image: url('/path-to-sith-image.jpg');
+  background-image: url('/sith.jpg');
   background-size: cover;
   background-position: center;
 }
